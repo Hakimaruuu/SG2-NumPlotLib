@@ -1,0 +1,74 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jun 28 16:00:44 2020
+
+@author: ASUS
+"""
+
+import matplotlib.pyplot as plot
+import numpy as nm
+
+# level 2
+a = nm.array([1,2,3,4,5])
+b = nm.array([15,14,13,12,11])
+bb= nm.array([15.5,14.5,13.5,12.5,11.5])
+c = nm.array([16,15,14,13,12])
+# buat plot level 2
+plot.plot(a,b)
+plot.plot(a,bb, 'b--')
+plot.plot(a,c)
+# tampil plot
+plot.show()
+
+# level 3
+def sinGen(amplitudo, frek, tAkhir, theta):
+    t = nm.arange(0,tAkhir,0.1)
+    ye = amplitudo * nm.sin(2*frek*t + nm.deg2rad(theta))
+    return t,ye
+# buat plot
+t1,y1 = sinGen(2,2,5,0)
+plot.plot(t1,y1)
+
+t2,y2 = sinGen(2,2,5,30)
+plot.plot(t2,y2, 'r')
+
+t3,y3 = sinGen(2,2,5,60)
+plot.plot(t3,y3, 'b--')
+
+plot.show()
+
+
+# level 4
+def sinGen2(amplitudo, frek, tAkhir, theta):
+    t = nm.arange(0,tAkhir,0.1)
+    ye = amplitudo * nm.sin(2*frek*t + nm.deg2rad(theta))
+    return t,ye
+# buat plot
+t1,y1 = sinGen2(2,2,5,0)
+data1 = plot.plot(t1,y1)
+
+t2,y2 = sinGen2(2,2,5,90)
+data2 = plot.plot(t2,y2, 'r')
+
+t3,y3 = sinGen2(2,2,5,180)
+data3 = plot.plot(t3,y3, 'b--')
+
+plot.setp(data1,color='r')
+plot.setp(data2,color='g')
+plot.setp(data3,color='b')
+
+plot.show()
+
+# level 5
+def sinGen2(amplitudo, frek, tAkhir, theta):
+    t = nm.arange(0,tAkhir,0.1)
+    ye = amplitudo * nm.sin(2*frek*t + nm.deg2rad(theta))
+    return t,ye
+# buat plot
+t1,y1 = sinGen2(2,2,5,180)
+data1 = plot.plot(t1,y1)
+plot.axis([0,5,-2,2])
+
+plot.setp(data3,color='b')
+
+plot.show()
